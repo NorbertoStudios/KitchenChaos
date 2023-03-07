@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea91cb0d53adaf34ebd9fe6f9db2f5d3, type: 3}
+  m_Script: {fileID: 11500000, guid: 72fe36b5f2e6b7f4e8a81a5ffb70bb2e, type: 3}
   m_Name: ChesseBlock
   m_EditorClassIdentifier: 
   prefab: {fileID: 4826497218114920322, guid: e796542805c00c843b682579736ced68, type: 3}
