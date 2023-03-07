@@ -140,6 +140,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6220852922736888335}
+  - component: {fileID: 5328892694872043220}
   m_Layer: 5
   m_Name: IconTemplate
   m_TagString: Untagged
@@ -169,6 +170,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &5328892694872043220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5969851337054491077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80304b96a44be62449bc556ee5e07a05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  image: {fileID: 6527765411169654478}
 --- !u!1 &6695175630653302914
 GameObject:
   m_ObjectHideFlags: 0
@@ -259,6 +273,8 @@ GameObject:
   - component: {fileID: 1526420712517537346}
   - component: {fileID: 7565991755323309088}
   - component: {fileID: 8651621619504610472}
+  - component: {fileID: 3875800123214347018}
+  - component: {fileID: 4392775210032006300}
   m_Layer: 5
   m_Name: PlateIconUI
   m_TagString: Untagged
@@ -373,6 +389,33 @@ MonoBehaviour:
   m_Spacing: {x: 0, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
+--- !u!114 &3875800123214347018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6721033945979404466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9d0f2d8902c93f4e90856602365d7c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plateKitchenObject: {fileID: 4191590446946320405}
+  iconTemplate: {fileID: 6220852922736888335}
+--- !u!114 &4392775210032006300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6721033945979404466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25d150380f0a97f419dd940dee7ee94b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mode: 2
 --- !u!1001 &4255972020165376695
 PrefabInstance:
   m_ObjectHideFlags: 0
