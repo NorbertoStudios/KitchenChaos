@@ -41,6 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7485325931404429466}
   - component: {fileID: 2436708322437208303}
+  - component: {fileID: 5755771760277041476}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -63,7 +64,7 @@ Transform:
   - {fileID: 2766356112829406513}
   - {fileID: 3730664518666456452}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2436708322437208303
 MonoBehaviour:
@@ -84,6 +85,18 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   kitchenObjectHoldPoint: {fileID: 3730664518666456452}
+--- !u!114 &5755771760277041476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8574841191212121644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fd492f6cbc14a245b3d719466d5bb6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &854917664156709141
 PrefabInstance:
   m_ObjectHideFlags: 0
