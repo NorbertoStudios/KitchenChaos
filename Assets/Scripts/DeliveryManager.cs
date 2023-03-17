@@ -48,7 +48,7 @@ public class DeliveryManager : MonoBehaviour
         {
             RecipeSO waitingRecipeSO = waitingRecipeSOList[i];
 
-            if (waitingRecipeSO.kitchenObjectSOList.Count == plateKitchenObject.GetKitchenObjectSOList().Count) ;
+            if (waitingRecipeSO.kitchenObjectSOList.Count == plateKitchenObject.GetKitchenObjectSOList().Count)
             {
                 bool plateContentsMatchesRecipe = true;
                 // Has the same number of ingridients

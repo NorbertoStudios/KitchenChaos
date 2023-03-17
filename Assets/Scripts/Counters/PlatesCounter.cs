@@ -11,7 +11,7 @@ public class PlatesCounter : BaseCounter
     [SerializeField] private KitchenObjectSO plateKitchenObjectSO;
     [SerializeField] private float spawnPlateTimerMax = 4f;
     [SerializeField] private int platesSpawnedAmount;
-    [SerializeField] private int platesSpawnedAmountMax = 4;
+    // [SerializeField] private int platesSpawnedAmountMax = 4;
 
     private float spawnPlateTimer;
     public override void Interact(Player player)
@@ -22,7 +22,6 @@ public class PlatesCounter : BaseCounter
                 platesSpawnedAmount--;
 
                 KitchenObject.SpawnKitchenObject(plateKitchenObjectSO, player);
-
                 OnPlateRemove?.Invoke(this, EventArgs.Empty);
             }
         }
