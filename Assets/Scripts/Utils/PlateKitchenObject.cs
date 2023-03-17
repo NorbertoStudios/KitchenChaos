@@ -1,52 +1,55 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
+using ScribtableObjects;
 using UnityEngine;
 
-public class PlateKitchenObject : KitchenObject
+namespace Utils
 {
-    public event EventHandler<OnIngredientAddedEventArgs> OnIngredientAdded;
-    public class OnIngredientAddedEventArgs : EventArgs
+    public class PlateKitchenObject : KitchenObject
     {
-        public KitchenObjectSO KitchenObjectSO;
-    }
-
-
-    [SerializeField] private List<KitchenObjectSO> validKitchenObjectSOList;
-    private List<KitchenObjectSO> kitchenObjectSOList;
-
-    private void Awake()
-    {
-        kitchenObjectSOList = new List<KitchenObjectSO>();
-    }
-
-    public bool TryAddIngredient(KitchenObjectSO kitchenObjectSO)
-    {
-        if (!validKitchenObjectSOList.Contains(kitchenObjectSO))
+        public event EventHandler<OnIngredientAddedEventArgs> OnIngredientAdded;
+        public class OnIngredientAddedEventArgs : EventArgs
         {
-            // Not a valid ingridient
-            return false;
+            public KitchenObjectSO KitchenObjectSO;
         }
-        if (kitchenObjectSOList.Contains(kitchenObjectSO))
+
+
+        [SerializeField] private List<KitchenObjectSO> validKitchenObjectSOList;
+        private List<KitchenObjectSO> kitchenObjectSOList;
+
+        private void Awake()
         {
-            // Already has this item
-            return false;
+            kitchenObjectSOList = new List<KitchenObjectSO>();
         }
-        else
+
+        public bool TryAddIngredient(KitchenObjectSO kitchenObjectSO)
         {
-
-            kitchenObjectSOList.Add(kitchenObjectSO);
-
-            OnIngredientAdded?.Invoke(this, new OnIngredientAddedEventArgs
+            if (!validKitchenObjectSOList.Contains(kitchenObjectSO))
             {
-                KitchenObjectSO = kitchenObjectSO
-            });
+                // Not a valid ingridient
+                return false;
+            }
+            if (kitchenObjectSOList.Contains(kitchenObjectSO))
+            {
+                // Already has this item
+                return false;
+            }
+            else
+            {
 
-            return true;
+                kitchenObjectSOList.Add(kitchenObjectSO);
+
+                OnIngredientAdded?.Invoke(this, new OnIngredientAddedEventArgs
+                {
+                    KitchenObjectSO = kitchenObjectSO
+                });
+
+                return true;
+            }
         }
-    }
 
-    public List<KitchenObjectSO> GetKitchenObjectSOList(){
-        return kitchenObjectSOList;
+        public List<KitchenObjectSO> GetKitchenObjectSOList(){
+            return kitchenObjectSOList;
+        }
     }
 }

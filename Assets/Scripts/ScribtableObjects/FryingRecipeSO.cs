@@ -1,11 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu()]
-public class FryingRecipeSO : ScriptableObject
+namespace ScribtableObjects
 {
-    public KitchenObjectSO input;
-    public KitchenObjectSO output;
-    public int fryingTimerMax;
+    [CreateAssetMenu()]
+    public class FryingRecipeSO : ScriptableObject
+    {
+        public KitchenObjectSO input;
+        public KitchenObjectSO output;
+        public int fryingTimerMax;
+    }
 }

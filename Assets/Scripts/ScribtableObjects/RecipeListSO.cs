@@ -1,9 +1,11 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 // [CreateAssetMenu()]
-public class RecipeListSO : ScriptableObject
+namespace ScribtableObjects
 {
-    public List<RecipeSO> recipeListSO;
+    public class RecipeListSO : ScriptableObject
+    {
+        public List<RecipeSO> recipeListSO;
+    }
 }

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Utils;
 
 public class KitchenGameManager : MonoBehaviour
 {
@@ -20,10 +21,9 @@ public class KitchenGameManager : MonoBehaviour
     }
 
     private State state;
-    private float waititngToStartTimer = 1f;
     private float countDownToStartTimer = 3f;
     private float gamePlayingTimer;
-    private float gamePlayingTimerMax = 10f;
+    [SerializeField] private float gamePlayingTimerMax = 60f;
 
     private bool isGamePause = false;
 
@@ -35,6 +35,16 @@ public class KitchenGameManager : MonoBehaviour
 
     private void Start(){
       GameInput.Instance.OnPauseAction += GameInput_OnPauseAction;
+      GameInput.Instance.OnInteractAction += GameInput_OnInteractAction;
+    }
+
+    private void GameInput_OnInteractAction(object sender, EventArgs e)
+    {
+        if (state == State.WaitingToStart)
+        {
+            state = State.CountDownToStart;
+            OnStateChanged?.Invoke(this, EventArgs.Empty);
+        }
     }
 
     private void Update()
@@ -42,12 +52,6 @@ public class KitchenGameManager : MonoBehaviour
         switch (state)
         {
             case State.WaitingToStart:
-                waititngToStartTimer -= Time.deltaTime;
-                if (waititngToStartTimer < 0f)
-                {
-                    state = State.CountDownToStart;
-                    OnStateChanged?.Invoke(this, EventArgs.Empty);
-                }
                 break;
             case State.CountDownToStart:
                 countDownToStartTimer -= Time.deltaTime;
@@ -69,7 +73,6 @@ public class KitchenGameManager : MonoBehaviour
             case State.GameOver:
                 break;
         }
-        Debug.Log(state);
     }
 
     private void GameInput_OnPauseAction(object sender, System.EventArgs e){

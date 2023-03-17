@@ -1,11 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu()]
-public class CuttingRecipeSO : ScriptableObject
+namespace ScribtableObjects
 {
-    public KitchenObjectSO input;
-    public KitchenObjectSO output;
-    public int cuttingProgressMax;
+    [CreateAssetMenu()]
+    public class CuttingRecipeSO : ScriptableObject
+    {
+        public KitchenObjectSO input;
+        public KitchenObjectSO output;
+        public int cuttingProgressMax;
+    }
 }

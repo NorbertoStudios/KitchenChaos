@@ -1,21 +1,24 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
+using ScribtableObjects;
 using UnityEngine;
+using Utils;
 
-public class ContainerCounter : BaseCounter
+namespace Counters
 {
-    public event EventHandler OnPlayerGrabbedObject;
-    [SerializeField] private KitchenObjectSO kitchenObjectSO;
-
-    public override void Interact(Player player)
+    public class ContainerCounter : BaseCounter
     {
-        if (!player.HasKitchenObject())
-        {
-            // Player is not carrying a kitchen object
-            KitchenObject.SpawnKitchenObject(kitchenObjectSO, player);
-            OnPlayerGrabbedObject?.Invoke(this, EventArgs.Empty);
-        }
-    }
+        public event EventHandler OnPlayerGrabbedObject;
+        [SerializeField] private KitchenObjectSO kitchenObjectSO;
 
+        public override void Interact(Player player)
+        {
+            if (!player.HasKitchenObject())
+            {
+                // Player is not carrying a kitchen object
+                KitchenObject.SpawnKitchenObject(kitchenObjectSO, player);
+                OnPlayerGrabbedObject?.Invoke(this, EventArgs.Empty);
+            }
+        }
+
+    }
 }
